@@ -5,9 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./styles/standard.css">
     <script src="./script.js"></script>
+    <script src="./scripts/template.js"></script>
+    <script src="./scripts/types.js"></script>
+    <link rel="icon" type="image/x-icon" href="./img/pokeball-fav.png">
 </head>
-<body>
+<body onload="init()">
+    <header>
+        <div class="header-content max-width">
+            <div class="header-left">
+                <img src="./img/pokeball.png" alt="">
+                <img class="header-name" src="./img/pokedex.png" alt="">
+            </div>
     
+            <input type="text">
+        </div>
+    </header>
+    
+    <main>
+        <div class="max-width">
+            <div id="content"></div>
+            <div class="button-content">
+                <button onclick="loadMorePokemon()" class="load-more-btn">
+                    <img src="./img/pokeball.png" alt="Pokeball" class="icon">
+                    Mehr Pokémon laden
+                </button>
+            </div>
+            <!-- <div id="pokemon-modal"></div> -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content max-width">
+            <img src="./img/pokeball.png" alt="">
+            <div>
+                <a target="_blank" href="https://icons8.com/icon/63311/pokeball">Pokéball</a> Icon von <a target="_blank"
+                    href="https://icons8.com">Icons8</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
