@@ -1,38 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
+
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./styles/standard.css">
+    <link rel="stylesheet" href="./styles/loading.css">
+    <link rel="stylesheet" href="./styles/toggledcard.css">
+
     <script src="./script.js"></script>
     <script src="./scripts/template.js"></script>
     <script src="./scripts/types.js"></script>
+    <script src="./scripts/filter.js"></script>
+
     <link rel="icon" type="image/x-icon" href="./img/pokeball-fav.png">
 </head>
-<body onload="init()">
+
+<body id="body" onload="init()">
     <header>
         <div class="header-content max-width">
             <div class="header-left">
                 <img src="./img/pokeball.png" alt="">
-                <img class="header-name" src="./img/pokedex.png" alt="">
+                <h1 class="header-name">Pokedex</h1>
             </div>
-    
-            <input type="text">
+            <div class="header-right">
+                <input type="text" id="searchField" placeholder="Search Pokémon... (min. 3 letters)" oninput="searchPokemons()">
+            </div>    
         </div>
     </header>
-    
+
     <main>
         <div class="max-width">
             <div id="content"></div>
+            <div id="searchedContent"></div>
             <div class="button-content">
-                <button onclick="loadMorePokemon()" class="load-more-btn">
+                <button id="loadMoreButton" onclick="loadMorePokemon()" class="load-more-btn">
                     <img src="./img/pokeball.png" alt="Pokeball" class="icon">
                     Mehr Pokémon laden
                 </button>
             </div>
-            <!-- <div id="pokemon-modal"></div> -->
         </div>
     </main>
 
@@ -40,10 +48,10 @@
         <div class="footer-content max-width">
             <img src="./img/pokeball.png" alt="">
             <div>
-                <a target="_blank" href="https://icons8.com/icon/63311/pokeball">Pokéball</a> Icon von <a target="_blank"
-                    href="https://icons8.com">Icons8</a>
+                Icons von <a class="link" target="_blank" href="https://icons8.com">Icons8</a>
             </div>
         </div>
     </footer>
 </body>
+
 </html>

@@ -1,9 +1,36 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    scroll-behavior: smooth;
+    font-family: 'roboto';
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('./fonts/roboto.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'pokemon';
+    src: url('./fonts/pokemonhollow.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.max-width {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+}
+
 body {
     width: 100%;
 }
 
 header {
-    background-color: grey;
+    background-color: #ffcc00;
 }
 
 .header-content {
@@ -18,15 +45,29 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 8px;
+}
+
+.header-left img {
+    width: 88px;
 }
 
 .header-name {
-    width: 120px;
+    font-family: 'pokemon';
+    font-size: 40px;
+    color: #36474f;
+}
+
+.header-right {
+    padding-right: 8px;
 }
 
 input {
     height: 32px;
     width: 240px;
+    border: 2px solid #36474f;
+    border-radius: 6px;
+    outline: none;
 }
 
 main {
@@ -49,7 +90,15 @@ main {
     align-items: center;
     width: 220px;
     height: 270px;
+    border: 2px solid #2c2c2c;
     border-radius: 16px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.pokemon-card:hover {
+    cursor: pointer;
+    transform: scale(0.95);
+    box-shadow: 0px 0px 32px 0px rgba(255,204,0,1);
 }
 
 .card-header {
@@ -75,6 +124,7 @@ main {
     justify-content: center;
     gap: 8px;
     padding-top: 12px;
+    padding-bottom: 12px;
     border-top: 2px solid black;
     width: 100%;
 }
@@ -126,7 +176,8 @@ main {
 }
 
 footer {
-    background-color: grey;
+    background-color: #ffcc00;
+    color: #36474f;
 }
 
 .footer-content {
@@ -137,44 +188,26 @@ footer {
     padding: 16px 0px;
 }
 
+.link {
+    color: #36474f;
+}
+
 .footer-content img {
     width: 64px;
 }
 
-
-
-
-
-
-/* Blur-Effekt für den Hintergrund */
-.blurred-background {
-    filter: blur(5px);
-    pointer-events: none;
+@media (max-width: 650px) {
+    .header-name {
+        display: none;
+    }
 }
 
-/* Overlay für den modalen Effekt */
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Halbtransparentes Schwarz */
-    z-index: 10; /* Über den anderen Elementen */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+@media (max-width: 450px) {
+    .header-content {
+        padding: 16px 0px;
+    }
 
-/* Großansicht der Karte */
-.large-pokemon-card {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 11; /* Über dem Overlay */
-    max-width: 90%;
-    max-height: 90%;
-    overflow: auto;
-    text-align: center;
+    input {
+        width: 212px;
+    }
 }
