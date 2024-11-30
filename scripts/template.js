@@ -1,6 +1,5 @@
 function getPokemonCard(pokemon) {
     let pokename = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
-    console.log(pokemon);
     
     return `<div onclick="toggledPokemonCard(${pokemon.id})" style="background-color: ${typeColors[pokemon.types[0].type.name]}" class="pokemon-card">
                 <div class="card-header">
